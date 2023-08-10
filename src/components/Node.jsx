@@ -13,7 +13,7 @@ const reactFlowNod = {
 
 
 
-const MindNode = () => {
+const Nodes = () => {
     const [elements, setElements] = useState(initialElements);
     const [name, setName] = useState("")
 
@@ -89,7 +89,7 @@ const MindNode = () => {
                     width: '50px',
                     height: '50px',
                     marginLeft: '10px',
-                    borderRadius: '50%',
+                    borderRadius: '50%'
                 }}
                     type="button"
                     onClick={addNodeAPI}
@@ -109,7 +109,7 @@ const MindNode = () => {
                     width: '50px',
                     height: '50px',
                     marginLeft: '10px',
-                    borderRadius: '50%',
+                    borderRadius: '50%'
                 }}
                     type="button"
                     onClick={addNodeDB}
@@ -123,12 +123,12 @@ const MindNode = () => {
                     onClick={() => {
                         const jsonData = JSON.stringify(elements, null, 2)
                         console.log(jsonData)
-                        const blob = new Blob([jsonData], { type: 'application/json' });
-                        const url = URL.createObjectURL(blob);
-                        const a = document.createElement('a');
-                        a.href = url;
-                        a.download = 'diagram.json'; // İndirilecek dosya adı
-                        a.click();
+                        const blob = new Blob([jsonData], { type: 'application/json' })
+                        const url = URL.createObjectURL(blob)
+                        const a = document.createElement('a')
+                        a.href = url
+                        a.download = 'diagram.json'
+                        a.click()
 
                         URL.revokeObjectURL(url);
 
@@ -140,4 +140,4 @@ const MindNode = () => {
     )
 }
 
-export default MindNode;
+export default Nodes;
